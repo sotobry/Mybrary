@@ -10,15 +10,20 @@ app.set('layout', 'layouts/layout');
 app.use(express.static('public'));
 
 const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
 app.use(expressLayouts);
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 db.on('error', err => console.error(err));
 db.once('open', () => console.log('Connected to Mongoose.'));
 
 const indexRouter = require('./routes/index');
+const authorsRouter = require('./routes/authors');
 app.use('/', indexRouter);
+app.use('/authors', authorsRouter);
 
 app.listen(process.env.PORT || 3006);
