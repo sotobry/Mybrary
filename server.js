@@ -21,4 +21,4 @@ db.once('open', () => console.log('Connected to Mongoose.'));
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3006);
