@@ -31,6 +31,7 @@ router
       const newAuthor = await author.save();
       res.redirect('authors');
     } catch (err) {
+      console.error(err);
       res.render('authors/new', {
         author,
         errorMessage: 'Error creating Author.',
