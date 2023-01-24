@@ -1,0 +1,39 @@
+:root {
+  --nav-title-font-size: 3rem;
+  --nav-title-font-weight: bold;
+  --nav-link-font-weight: 300;
+}
+
+.header-title {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: var(--nav-title-font-size);
+  font-weight: var(--nav-title-font-weight);
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.header-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-links li a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: var(--nav-link-font-weight);
+  padding: 1rem;
+}
+
+.header-title:hover,
+.header-links li a:hover {
+  color: #fff;
+}

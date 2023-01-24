@@ -1,4 +1,4 @@
-<h2>Edit book</h2>
+<h2 class="page-header">Edit book</h2>
 <form method="POST" action="/books/<%= book.id %>?_method=PUT">
   <%- include('_form_fields', { book, authors }) %>
   <a href="/books/<%= book.id %>">Cancel</a>
