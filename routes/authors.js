@@ -17,10 +17,10 @@ router
       const authors = await Author.find(searchOptions);
       res.render('authors/index', { authors, name });
     } catch (err) {
-      // res.render('authors/index', {
-      //   authors: [],
-      //   errorMessage: 'Error getting the authors.',
-      // });
+      res.render('authors/index', {
+        authors: [],
+        errorMessage: 'Error getting the authors.',
+      });
       res.redirect('/');
     }
   })
@@ -58,7 +58,7 @@ router
 
       res.render(`authors/show`, { author, booksByAuthor });
     } catch (err) {
-      // console.error(err);
+      console.error(err);
       res.redirect('/');
     }
   })
@@ -72,7 +72,7 @@ router
       await author.save();
       res.redirect(`/authors/${id}`);
     } catch (err) {
-      // console.error(err);
+      console.error(err);
 
       // if we couldn't find an author
       if (author == null) {
@@ -97,7 +97,6 @@ router
 
       res.redirect(`/authors`);
     } catch {
-      // console.error(err);
       // if we couldn't find an author
       if (author == null) {
         res.redirect(`/`);
