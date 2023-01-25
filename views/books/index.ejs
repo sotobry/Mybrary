@@ -33,15 +33,4 @@
 
 <br />
 
-<div>
-  <% books.forEach(book => { %>
-  <a href="books/<%= book.id %>">
-    <img
-      height="150"
-      width="100"
-      src="<%= book.coverImagePath %>"
-      alt="book cover"
-    />
-  </a>
-  <%})%>
-</div>
+<div><%- include('../partials/bookGrid', { books, lg: true })%></div>

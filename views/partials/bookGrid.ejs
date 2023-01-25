@@ -1,0 +1,14 @@
+<% bookCoverClass = locals.lg ? 'book-cover-lg' : ''; %> <% bookGridClass =
+locals.lg ? 'book-grid-lg' : ''; %>
+
+<div class="book-grid <%= bookGridClass %>">
+  <% books.forEach(book => { %>
+  <a href="/books/<%= book.id %>">
+    <img
+      class="book-cover <%= bookCoverClass %>"
+      src="<%= book.coverImagePath %>"
+      alt="book cover"
+    />
+  </a>
+  <%})%>
+</div>
